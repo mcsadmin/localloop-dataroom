@@ -1,0 +1,31 @@
+# Local Loop Merseyside — Data Room
+# Netlify configuration
+# Deploy from: github.com/mcsadmin/localloop-dataroom
+# Live at: dataroom.localloop-merseyside.co.uk
+
+[build]
+  publish = "public"
+
+# Edge function guards every route
+[[edge_functions]]
+  path = "/*"
+  function = "auth-gate"
+
+# SPA fallback for the financial model (React router handles /about/* etc.)
+[[redirects]]
+  from = "/financial-model/*"
+  to = "/financial-model/index.html"
+  status = 200
+
+# Root index fallback
+[[redirects]]
+  from = "/"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Signing out…</title>
+  <script>
+    // Clear the auth cookie by setting it expired, then redirect to login
+    document.cookie = "dataroom_auth=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Secure; SameSite=Lax";
+    window.location.replace("/login");
+  </script>
+</head>
+<body>Signing out…</body>
+</html>
