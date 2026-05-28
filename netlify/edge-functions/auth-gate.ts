@@ -1,20 +1,21 @@
 /**
  * auth-gate.ts — Netlify Edge Function
  *
- * Protects the entire data room with a shared passphrase.
- * Path configuration (including excludedPath) is in netlify.toml.
+ * Checks every request for a valid signed auth cookie.
+ * If absent or invalid, redirects to /login.
  *
- * Environment variables (set in Netlify UI → Site settings → Environment variables):
- *   DATAROOM_PASSWORD   — the passphrase visitors must enter
- *   COOKIE_SECRET       — a random string used to sign the auth cookie (min 32 chars)
+ * Login form POST is handled by netlify/functions/login.mjs
+ * (routed via /do-login redirect in netlify.toml).
+ *
+ * Environment variables:
+ *   COOKIE_SECRET — must match the value used in login.mjs
  */
 
 import type { Context } from "@netlify/edge-functions";
 
 const COOKIE_NAME = "dataroom_auth";
-const COOKIE_MAX_AGE = 60 * 60 * 24 * 7; // 7 days
 
-async function sign(value: string, secret: string): Promise<string> {
+async function verifySignature(value: string, secret: string, expected: string): Promise<boolean> {
   const encoder = new TextEncoder();
   const key = await crypto.subtle.importKey(
     "raw",
@@ -25,14 +26,11 @@ async function sign(value: string, secret: string): Promise<string> {
   );
   const signature = await crypto.subtle.sign("HMAC", key, encoder.encode(value));
   const bytes = new Uint8Array(signature);
-  return btoa(String.fromCharCode(...bytes))
+  const actual = btoa(String.fromCharCode(...bytes))
     .replace(/\+/g, "-")
     .replace(/\//g, "_")
     .replace(/=/g, "");
-}
 
-async function verifySignature(value: string, secret: string, expected: string): Promise<boolean> {
-  const actual = await sign(value, secret);
   if (actual.length !== expected.length) return false;
   let diff = 0;
   for (let i = 0; i < actual.length; i++) {
@@ -54,44 +52,9 @@ function parseCookies(header: string | null): Record<string, string> {
 export default async function authGate(request: Request, context: Context) {
   const url = new URL(request.url);
   const path = url.pathname;
-
-  const password = Netlify.env.get("DATAROOM_PASSWORD") || "";
   const secret = Netlify.env.get("COOKIE_SECRET") || "change-me-please-set-in-netlify";
 
-  // Handle login form POST
-  if (request.method === "POST" && (path === "/login" || path === "/login.html")) {
-    let submitted = "";
-    try {
-      const body = await request.formData();
-      submitted = (body.get("password") as string) || "";
-    } catch {
-      // ignore parse errors
-    }
-
-    if (submitted && submitted === password) {
-      const payload = `authenticated:${Date.now()}`;
-      const sig = await sign(payload, secret);
-      const cookieValue = `${encodeURIComponent(payload)}.${sig}`;
-      const redirectTo = url.searchParams.get("next") || "/";
-
-      return new Response(null, {
-        status: 303,
-        headers: {
-          Location: redirectTo,
-          "Set-Cookie": `${COOKIE_NAME}=${cookieValue}; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=${COOKIE_MAX_AGE}`,
-        },
-      });
-    }
-
-    // Wrong password — redirect back to login with error flag
-    const nextParam = url.searchParams.get("next") || "/";
-    return new Response(null, {
-      status: 303,
-      headers: { Location: `/login?error=1&next=${encodeURIComponent(nextParam)}` },
-    });
-  }
-
-  // Check auth cookie for all other requests
+  // Check auth cookie
   const cookies = parseCookies(request.headers.get("cookie"));
   const cookieValue = cookies[COOKIE_NAME];
 

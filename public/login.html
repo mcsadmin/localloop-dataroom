@@ -4,10 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Local Loop Merseyside — Data Room</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=DM+Sans:wght@400;500&display=swap');
 
     :root {
       --forest: #1a3a2a;
@@ -184,7 +185,7 @@
     <h1>Access required</h1>
     <p class="subtitle">This data room is private. Please enter the access passphrase to continue.</p>
 
-    <form method="POST" action="/login">
+    <form method="POST" action="/do-login">
       <input type="hidden" name="next" id="next-field" value="/" />
       <label for="password">Passphrase</label>
       <input
@@ -204,7 +205,6 @@
   <p class="footer">For access, contact the Local Loop Merseyside team.</p>
 
   <script>
-    // Populate the next field from the URL query string
     const params = new URLSearchParams(window.location.search);
     const next = params.get('next');
     if (next) document.getElementById('next-field').value = next;

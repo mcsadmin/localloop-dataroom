@@ -6,11 +6,28 @@
 [build]
   publish = "public"
 
-# Edge function guards every route except login, logout, and static assets
+# Edge function checks auth cookie on all protected routes
 [[edge_functions]]
   path = "/*"
-  excludedPath = ["/login", "/login.html", "/logout", "/logout.html", "/favicon.ico", "/assets/*", "/financial-model/assets/*"]
+  excludedPath = [
+    "/login",
+    "/login.html",
+    "/logout",
+    "/logout.html",
+    "/do-login",
+    "/favicon.ico",
+    "/.netlify/*",
+    "/assets/*",
+    "/financial-model/assets/*"
+  ]
   function = "auth-gate"
+
+# Route login form POST to the serverless function
+[[redirects]]
+  from = "/do-login"
+  to = "/.netlify/functions/login"
+  status = 200
+  force = true
 
 # Serve login.html at /login (clean URL)
 [[redirects]]
