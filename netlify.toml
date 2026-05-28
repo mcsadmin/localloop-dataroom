@@ -6,12 +6,13 @@
 [build]
   publish = "public"
 
-# Edge function guards every route
+# Edge function guards every route except login, logout, and static assets
 [[edge_functions]]
   path = "/*"
+  excludedPath = ["/login", "/login.html", "/logout", "/logout.html", "/favicon.ico", "/assets/*", "/financial-model/assets/*"]
   function = "auth-gate"
 
-# Serve login.html at /login (no .html extension)
+# Serve login.html at /login (clean URL)
 [[redirects]]
   from = "/login"
   to = "/login.html"

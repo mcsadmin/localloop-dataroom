@@ -2,13 +2,14 @@
  * auth-gate.ts — Netlify Edge Function
  *
  * Protects the entire data room with a shared passphrase.
+ * Path configuration (including excludedPath) is in netlify.toml.
  *
  * Environment variables (set in Netlify UI → Site settings → Environment variables):
  *   DATAROOM_PASSWORD   — the passphrase visitors must enter
  *   COOKIE_SECRET       — a random string used to sign the auth cookie (min 32 chars)
  */
 
-import type { Config, Context } from "@netlify/edge-functions";
+import type { Context } from "@netlify/edge-functions";
 
 const COOKIE_NAME = "dataroom_auth";
 const COOKIE_MAX_AGE = 60 * 60 * 24 * 7; // 7 days
@@ -57,7 +58,7 @@ export default async function authGate(request: Request, context: Context) {
   const password = Netlify.env.get("DATAROOM_PASSWORD") || "";
   const secret = Netlify.env.get("COOKIE_SECRET") || "change-me-please-set-in-netlify";
 
-  // Handle login form POST — must be before the pass-through check
+  // Handle login form POST
   if (request.method === "POST" && (path === "/login" || path === "/login.html")) {
     let submitted = "";
     try {
@@ -82,7 +83,7 @@ export default async function authGate(request: Request, context: Context) {
       });
     }
 
-    // Wrong password
+    // Wrong password — redirect back to login with error flag
     const nextParam = url.searchParams.get("next") || "/";
     return new Response(null, {
       status: 303,
@@ -112,17 +113,3 @@ export default async function authGate(request: Request, context: Context) {
     headers: { Location: `/login?next=${encodeURIComponent(path)}` },
   });
 }
-
-// Exclude login, logout, and all static asset paths from the gate
-export const config: Config = {
-  path: "/*",
-  excludedPath: [
-    "/login",
-    "/login.html",
-    "/logout",
-    "/logout.html",
-    "/favicon.ico",
-    "/assets/*",
-    "/financial-model/assets/*",
-  ],
-};
