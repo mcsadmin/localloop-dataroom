@@ -6,13 +6,6 @@
  * Environment variables (set in Netlify UI → Site settings → Environment variables):
  *   DATAROOM_PASSWORD   — the passphrase visitors must enter
  *   COOKIE_SECRET       — a random string used to sign the auth cookie (min 32 chars)
- *
- * Flow:
- *   1. Every request passes through this function.
- *   2. Requests to /login are always allowed through.
- *   3. All other requests check for a valid signed cookie.
- *   4. If the cookie is absent or invalid, redirect to /login.
- *   5. POST to /login with the correct password sets the cookie and redirects to /.
  */
 
 import type { Config, Context } from "@netlify/edge-functions";
@@ -64,8 +57,8 @@ export default async function authGate(request: Request, context: Context) {
   const password = Netlify.env.get("DATAROOM_PASSWORD") || "";
   const secret = Netlify.env.get("COOKIE_SECRET") || "change-me-please-set-in-netlify";
 
-  // Handle login form POST
-  if (request.method === "POST" && path === "/login") {
+  // Handle login form POST — must be before the pass-through check
+  if (request.method === "POST" && (path === "/login" || path === "/login.html")) {
     let submitted = "";
     try {
       const body = await request.formData();
@@ -97,12 +90,7 @@ export default async function authGate(request: Request, context: Context) {
     });
   }
 
-  // Always allow GET to /login
-  if (path === "/login" || path === "/login.html") {
-    return context.next();
-  }
-
-  // Check auth cookie
+  // Check auth cookie for all other requests
   const cookies = parseCookies(request.headers.get("cookie"));
   const cookieValue = cookies[COOKIE_NAME];
 
@@ -125,7 +113,16 @@ export default async function authGate(request: Request, context: Context) {
   });
 }
 
+// Exclude login, logout, and all static asset paths from the gate
 export const config: Config = {
   path: "/*",
-  excludedPath: ["/login", "/favicon.ico", "/assets/*"],
+  excludedPath: [
+    "/login",
+    "/login.html",
+    "/logout",
+    "/logout.html",
+    "/favicon.ico",
+    "/assets/*",
+    "/financial-model/assets/*",
+  ],
 };

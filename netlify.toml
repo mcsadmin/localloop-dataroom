@@ -11,6 +11,18 @@
   path = "/*"
   function = "auth-gate"
 
+# Serve login.html at /login (no .html extension)
+[[redirects]]
+  from = "/login"
+  to = "/login.html"
+  status = 200
+
+# Serve logout.html at /logout
+[[redirects]]
+  from = "/logout"
+  to = "/logout.html"
+  status = 200
+
 # SPA fallback for the financial model (React router handles /about/* etc.)
 [[redirects]]
   from = "/financial-model/*"
