@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scripts & Messaging — Local Loop Merseyside Data Room</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=DM+Sans:wght@400;500;600&display=swap');
+    :root {
+      --forest: #1a3a2a; --forest-mid: #2d5a3d; --sage: #7aab8a;
+      --cream: #f7f4ef; --text: #1c2b22; --muted: #6b7c72;
+      --border: #d4ddd7; --card-bg: #ffffff;
+    }
+    html, body { min-height: 100%; font-family: 'DM Sans', system-ui, sans-serif; background: var(--cream); color: var(--text); }
+    header { background: var(--forest); color: #fff; padding: 0 2rem; height: 56px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+    .header-left { display: flex; align-items: center; gap: 0.75rem; }
+    .logo-mark { width: 30px; height: 30px; background: rgba(255,255,255,0.15); border-radius: 6px; display: flex; align-items: center; justify-content: center; }
+    .logo-mark svg { width: 16px; height: 16px; fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; }
+    .site-name { font-family: 'Fraunces', Georgia, serif; font-size: 0.95rem; font-weight: 600; letter-spacing: -0.01em; }
+    .site-tag { font-size: 0.7rem; font-weight: 400; opacity: 0.6; letter-spacing: 0.06em; text-transform: uppercase; margin-left: 0.25rem; }
+    .header-right { display: flex; align-items: center; gap: 1rem; }
+    .back-link { font-size: 0.78rem; color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.15s; }
+    .back-link:hover { color: #fff; }
+    .logout-btn { font-size: 0.78rem; color: rgba(255,255,255,0.7); background: none; border: 1px solid rgba(255,255,255,0.25); border-radius: 4px; padding: 0.3rem 0.75rem; cursor: pointer; font-family: inherit; transition: color 0.15s, border-color 0.15s; text-decoration: none; }
+    .logout-btn:hover { color: #fff; border-color: rgba(255,255,255,0.6); }
+    main { max-width: 760px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+    .page-meta { margin-bottom: 2.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
+    .breadcrumb { font-size: 0.75rem; color: var(--muted); margin-bottom: 0.75rem; }
+    .breadcrumb a { color: var(--muted); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--forest); }
+    .page-meta h1 { font-family: 'Fraunces', Georgia, serif; font-size: 1.75rem; font-weight: 700; color: var(--forest); line-height: 1.2; }
+    .content h2 { font-family: 'Fraunces', Georgia, serif; font-size: 1.2rem; font-weight: 600; color: var(--forest); margin: 2rem 0 0.75rem; padding-top: 0.5rem; border-top: 1px solid var(--border); }
+    .content h3 { font-size: 0.95rem; font-weight: 600; color: var(--text); margin: 1.5rem 0 0.5rem; }
+    .content h4 { font-size: 0.875rem; font-weight: 600; color: var(--forest-mid); margin: 1.25rem 0 0.4rem; text-transform: uppercase; letter-spacing: 0.04em; }
+    .content p { font-size: 0.9rem; line-height: 1.75; color: var(--text); margin-bottom: 0.875rem; }
+    .content ul, .content ol { margin: 0.5rem 0 1rem 1.5rem; }
+    .content li { font-size: 0.9rem; line-height: 1.7; color: var(--text); margin-bottom: 0.25rem; }
+    .content strong { font-weight: 600; color: var(--forest); }
+    .content a { color: var(--forest-mid); }
+    .content blockquote { border-left: 3px solid var(--sage); padding: 0.75rem 1rem; margin: 1rem 0; background: rgba(26,58,42,0.04); border-radius: 0 6px 6px 0; }
+    .content blockquote p { margin-bottom: 0; font-style: italic; }
+    .content hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+    .notice { background: rgba(122,171,138,0.15); border: 1px solid rgba(122,171,138,0.4); border-radius: 8px; padding: 1rem 1.25rem; margin-bottom: 2rem; font-size: 0.85rem; color: var(--forest); line-height: 1.6; }
+    footer { text-align: center; font-size: 0.75rem; color: var(--muted); padding: 2rem; border-top: 1px solid var(--border); }
+  </style>
+</head>
+<body>
+<header>
+  <div class="header-left">
+    <div class="logo-mark">
+      <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+    </div>
+    <span class="site-name">Local Loop Merseyside <span class="site-tag">Data Room</span></span>
+  </div>
+  <div class="header-right">
+    <a href="/growth-partner-pack/" class="back-link">← Growth Partner Pack</a>
+    <a href="/logout" class="logout-btn">Sign out</a>
+  </div>
+</header>
+<main>
+  <div class="page-meta">
+    <div class="breadcrumb"><a href="/">Data Room</a> / <a href="/growth-partner-pack/">Growth Partner Pack</a> / Scripts & Messaging</div>
+    <h1>Scripts & Messaging</h1>
+  </div>
+  <div class="notice">Approved messaging frameworks and call scripts. Contact the team for the full scripts library and Canva template access.</div>
+  <div class="content">
+<p>All broadly on this Figma - look around. Much of it outdated. Some of it usable. Mapped to pipeline stages.</p>
+<p><a href="https://www.figma.com/board/IyqlP3NbDVlq5BE2dhjJI5/Client-Journey?node-id=1844-2471">https://www.figma.com/board/IyqlP3NbDVlq5BE2dhjJI5/Client-Journey?node-id=1844-2471</a></p>
+<p>Sales/Discovery call script parameters and prompts using lessons from Expert Empires:</p>
+<p>![](/image/attachment%3Adccf2662-ec63-4f22-a149-9aafb8d2a9ca%3Acdebad18-7243-45f9-b745-dff1a9700f2c.png?table=block&id=372b82b3-396a-80ec-8fa9-cda00cb1e2eb&spaceId=c1e4296d-38ab-4883-929b-c81e183b9ddd&width=1410&userId=&cache=v2&imgBuildSrc=requestProxiedImageUrl)</p>  </div>
+</main>
+<footer>Local Loop Merseyside &mdash; Confidential. Not for distribution.</footer>
+</body>
+</html>

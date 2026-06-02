@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Objection Log — Local Loop Merseyside Data Room</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=DM+Sans:wght@400;500;600&display=swap');
+    :root {
+      --forest: #1a3a2a; --forest-mid: #2d5a3d; --sage: #7aab8a;
+      --cream: #f7f4ef; --text: #1c2b22; --muted: #6b7c72;
+      --border: #d4ddd7; --card-bg: #ffffff;
+    }
+    html, body { min-height: 100%; font-family: 'DM Sans', system-ui, sans-serif; background: var(--cream); color: var(--text); }
+    header { background: var(--forest); color: #fff; padding: 0 2rem; height: 56px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+    .header-left { display: flex; align-items: center; gap: 0.75rem; }
+    .logo-mark { width: 30px; height: 30px; background: rgba(255,255,255,0.15); border-radius: 6px; display: flex; align-items: center; justify-content: center; }
+    .logo-mark svg { width: 16px; height: 16px; fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; }
+    .site-name { font-family: 'Fraunces', Georgia, serif; font-size: 0.95rem; font-weight: 600; letter-spacing: -0.01em; }
+    .site-tag { font-size: 0.7rem; font-weight: 400; opacity: 0.6; letter-spacing: 0.06em; text-transform: uppercase; margin-left: 0.25rem; }
+    .header-right { display: flex; align-items: center; gap: 1rem; }
+    .back-link { font-size: 0.78rem; color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.15s; }
+    .back-link:hover { color: #fff; }
+    .logout-btn { font-size: 0.78rem; color: rgba(255,255,255,0.7); background: none; border: 1px solid rgba(255,255,255,0.25); border-radius: 4px; padding: 0.3rem 0.75rem; cursor: pointer; font-family: inherit; transition: color 0.15s, border-color 0.15s; text-decoration: none; }
+    .logout-btn:hover { color: #fff; border-color: rgba(255,255,255,0.6); }
+    main { max-width: 760px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+    .page-meta { margin-bottom: 2.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
+    .breadcrumb { font-size: 0.75rem; color: var(--muted); margin-bottom: 0.75rem; }
+    .breadcrumb a { color: var(--muted); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--forest); }
+    .page-meta h1 { font-family: 'Fraunces', Georgia, serif; font-size: 1.75rem; font-weight: 700; color: var(--forest); line-height: 1.2; }
+    .content h2 { font-family: 'Fraunces', Georgia, serif; font-size: 1.2rem; font-weight: 600; color: var(--forest); margin: 2rem 0 0.75rem; padding-top: 0.5rem; border-top: 1px solid var(--border); }
+    .content h3 { font-size: 0.95rem; font-weight: 600; color: var(--text); margin: 1.5rem 0 0.5rem; }
+    .content h4 { font-size: 0.875rem; font-weight: 600; color: var(--forest-mid); margin: 1.25rem 0 0.4rem; text-transform: uppercase; letter-spacing: 0.04em; }
+    .content p { font-size: 0.9rem; line-height: 1.75; color: var(--text); margin-bottom: 0.875rem; }
+    .content ul, .content ol { margin: 0.5rem 0 1rem 1.5rem; }
+    .content li { font-size: 0.9rem; line-height: 1.7; color: var(--text); margin-bottom: 0.25rem; }
+    .content strong { font-weight: 600; color: var(--forest); }
+    .content a { color: var(--forest-mid); }
+    .content blockquote { border-left: 3px solid var(--sage); padding: 0.75rem 1rem; margin: 1rem 0; background: rgba(26,58,42,0.04); border-radius: 0 6px 6px 0; }
+    .content blockquote p { margin-bottom: 0; font-style: italic; }
+    .content hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+    .notice { background: rgba(122,171,138,0.15); border: 1px solid rgba(122,171,138,0.4); border-radius: 8px; padding: 1rem 1.25rem; margin-bottom: 2rem; font-size: 0.85rem; color: var(--forest); line-height: 1.6; }
+    footer { text-align: center; font-size: 0.75rem; color: var(--muted); padding: 2rem; border-top: 1px solid var(--border); }
+  </style>
+</head>
+<body>
+<header>
+  <div class="header-left">
+    <div class="logo-mark">
+      <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+    </div>
+    <span class="site-name">Local Loop Merseyside <span class="site-tag">Data Room</span></span>
+  </div>
+  <div class="header-right">
+    <a href="/growth-partner-pack/" class="back-link">← Growth Partner Pack</a>
+    <a href="/logout" class="logout-btn">Sign out</a>
+  </div>
+</header>
+<main>
+  <div class="page-meta">
+    <div class="breadcrumb"><a href="/">Data Room</a> / <a href="/growth-partner-pack/">Growth Partner Pack</a> / Objection Log</div>
+    <h1>Objection Log</h1>
+  </div>
+  <div class="notice">A record of real objections, hesitations, and stalls from founding member recruitment and early outreach. Use this to anticipate pushback and prepare responses.</div>
+  <div class="content">
+<p>“sit down and document every no, ghost, stall, and hesitation from FM recruitment and outreach. Who said no? What did they say? What confused people? What made them go quiet?</p>
+<p><a href="/AI-summary-36eb82b3396a80fa98c7d36ee398e8b8?pvs=25">AI summary</a></p>
+<p>Toms:</p>
+<p>what are the negatives your hear r.e local loop/block to moving forward?:</p>
+<p>lack of understanding, what it is, implications, complicated to engage with.</p>
+<p>our best opener is to talk about payment gridlocks. accurate, not misleading. but its not the full picture. as soon as we go a little deeper, we stop making sense to laypeople.</p>
+<p>what does land is therefore: an incomplete picture/story - and therefore follow on questions lead us into dead-ends/lack of comprehension.</p>
+<p>other explanations: cant pay because i havent been paid” still have to explain how that leads to better outcomes for them → better cash flow etc. graeme murray reccomends we start with outcomes they care about, if they ask we can explain, but dont lead with this.</p>
+<p>one follow on from this is: they’re not sure what it would mean to be a member: sometimes people do ask “how do i implement the results” sometimes people are lost here because we’re talking about changing the books/accounts. if we talk them through the sequence, most people can follow this, particualrly when they see the platform, but the last step where some people feel a but sceptical.</p>
+<p>jumping to conclusions - unsure what we do - making payments on our behalf - some kind of thrid party that intervenes?</p>
+<p>people are aware of other services, and semi literate, and we have to explain why this isnt what we are/do. interesting conversations are different to what useful ones. some people get it immediately, some don’t. not always succesfull.</p>
+<p>saw this with Donna, understood clearing conceptually, but other dimensions of the project they aren’t confident in. dont need them to be, but its only natural that they wonder. what people have repeatedly said is “we need a working example/case study” - this pre-empts the serious existential doubt about whether this is worth consdiering seriously beyond just an idea.</p>
+<p>not having a concrete picture of making use of the service or what using the platfrom will entail</p>
+<p>most people dont get excited by being shown the platform. how do we prove that its real without this. its an interesting question. few interactiojns where it feels right to get our phone out and show them. other objections is a flavour of “oh this is amazing and interesting, but its not for me” - sense that they think their trading patterns make them ineligble, or of politely ending the interaction. Potential correct sales response to this is “can you then introduce me to those people you think it will work for?”.</p>
+<p>not sure what the results are or how to work with them, people pick up on critical mass requirements</p>
+<p>usual data privacy and commercial sensitity concerns you might expect.</p>
+<p>sometimes less often: people go - wow this is a great idea - but they wonder why it hasnt worked before or that there must be some kind of a hidden catch.</p>
+<p>credibility: we come across as credible, hear us explain and believe us. but some feeling that we are technically adept, but worry we may not be actually capable of running a service in a commercially driven way. doubt as to actually being able to pull this off.</p>
+<p>r.e cold start problem, what do people think? - “adds a layer of scepticism, people dont think about their second order connections. when we explain loop gridlocks, its a double unknwon, people dont think about third/second order connections and certainly not whether there are loops”. - this is fair because loops are rare.</p>
+<p>something came up in lancaster “is this legal” - or more commonly - “what does this mean for my VAT” - also what happens if there is a credit note.</p>
+<p>what happens if i get paid before and there is a mix up with cash.</p>
+<p>people figure out that most loop clearing will be partial payments for all members bare one, so partial payments against there invoices, probably rare, but actually adds to their bookkeeping workload.</p>
+<p>also - what happens if someone deliberately puts in fake data, tries to exploit, or run a scam.</p>
+<p>“does this mean all my data is going to be visible to everyone else?”</p>
+<p>people often also want an answer to “how do we make money out of this”?</p>
+<p>is the way in which we want to make money straight. are we going to be some kind of extractor, or are we going to be running a charity ? are we too publicly spiritied for ourown good. in turn, what is the value proposition and what are people really going to be paying for, and in turn whats really the point and benefit of this.</p>
+<p>Dils:</p>
+<p>fewer conversations than Tom, few in way of objections, more of the “im not sure it will work for me” - most of the ones Dil has been in, they use other services, dont get paid late, dont buy or sell locally, and so they often have legitimate reaosns for not pursuing. these people are often still intere</p>
+<p>... (truncated)</p>  </div>
+</main>
+<footer>Local Loop Merseyside &mdash; Confidential. Not for distribution.</footer>
+</body>
+</html>

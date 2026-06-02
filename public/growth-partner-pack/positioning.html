@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Positioning — Local Loop Merseyside Data Room</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=DM+Sans:wght@400;500;600&display=swap');
+    :root {
+      --forest: #1a3a2a; --forest-mid: #2d5a3d; --sage: #7aab8a;
+      --cream: #f7f4ef; --text: #1c2b22; --muted: #6b7c72;
+      --border: #d4ddd7; --card-bg: #ffffff;
+    }
+    html, body { min-height: 100%; font-family: 'DM Sans', system-ui, sans-serif; background: var(--cream); color: var(--text); }
+    header { background: var(--forest); color: #fff; padding: 0 2rem; height: 56px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+    .header-left { display: flex; align-items: center; gap: 0.75rem; }
+    .logo-mark { width: 30px; height: 30px; background: rgba(255,255,255,0.15); border-radius: 6px; display: flex; align-items: center; justify-content: center; }
+    .logo-mark svg { width: 16px; height: 16px; fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; }
+    .site-name { font-family: 'Fraunces', Georgia, serif; font-size: 0.95rem; font-weight: 600; letter-spacing: -0.01em; }
+    .site-tag { font-size: 0.7rem; font-weight: 400; opacity: 0.6; letter-spacing: 0.06em; text-transform: uppercase; margin-left: 0.25rem; }
+    .header-right { display: flex; align-items: center; gap: 1rem; }
+    .back-link { font-size: 0.78rem; color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.15s; }
+    .back-link:hover { color: #fff; }
+    .logout-btn { font-size: 0.78rem; color: rgba(255,255,255,0.7); background: none; border: 1px solid rgba(255,255,255,0.25); border-radius: 4px; padding: 0.3rem 0.75rem; cursor: pointer; font-family: inherit; transition: color 0.15s, border-color 0.15s; text-decoration: none; }
+    .logout-btn:hover { color: #fff; border-color: rgba(255,255,255,0.6); }
+    main { max-width: 760px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+    .page-meta { margin-bottom: 2.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
+    .breadcrumb { font-size: 0.75rem; color: var(--muted); margin-bottom: 0.75rem; }
+    .breadcrumb a { color: var(--muted); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--forest); }
+    .page-meta h1 { font-family: 'Fraunces', Georgia, serif; font-size: 1.75rem; font-weight: 700; color: var(--forest); line-height: 1.2; }
+    .content h2 { font-family: 'Fraunces', Georgia, serif; font-size: 1.2rem; font-weight: 600; color: var(--forest); margin: 2rem 0 0.75rem; padding-top: 0.5rem; border-top: 1px solid var(--border); }
+    .content h3 { font-size: 0.95rem; font-weight: 600; color: var(--text); margin: 1.5rem 0 0.5rem; }
+    .content h4 { font-size: 0.875rem; font-weight: 600; color: var(--forest-mid); margin: 1.25rem 0 0.4rem; text-transform: uppercase; letter-spacing: 0.04em; }
+    .content p { font-size: 0.9rem; line-height: 1.75; color: var(--text); margin-bottom: 0.875rem; }
+    .content ul, .content ol { margin: 0.5rem 0 1rem 1.5rem; }
+    .content li { font-size: 0.9rem; line-height: 1.7; color: var(--text); margin-bottom: 0.25rem; }
+    .content strong { font-weight: 600; color: var(--forest); }
+    .content a { color: var(--forest-mid); }
+    .content blockquote { border-left: 3px solid var(--sage); padding: 0.75rem 1rem; margin: 1rem 0; background: rgba(26,58,42,0.04); border-radius: 0 6px 6px 0; }
+    .content blockquote p { margin-bottom: 0; font-style: italic; }
+    .content hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+    .notice { background: rgba(122,171,138,0.15); border: 1px solid rgba(122,171,138,0.4); border-radius: 8px; padding: 1rem 1.25rem; margin-bottom: 2rem; font-size: 0.85rem; color: var(--forest); line-height: 1.6; }
+    footer { text-align: center; font-size: 0.75rem; color: var(--muted); padding: 2rem; border-top: 1px solid var(--border); }
+  </style>
+</head>
+<body>
+<header>
+  <div class="header-left">
+    <div class="logo-mark">
+      <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+    </div>
+    <span class="site-name">Local Loop Merseyside <span class="site-tag">Data Room</span></span>
+  </div>
+  <div class="header-right">
+    <a href="/growth-partner-pack/" class="back-link">← Growth Partner Pack</a>
+    <a href="/logout" class="logout-btn">Sign out</a>
+  </div>
+</header>
+<main>
+  <div class="page-meta">
+    <div class="breadcrumb"><a href="/">Data Room</a> / <a href="/growth-partner-pack/">Growth Partner Pack</a> / Positioning</div>
+    <h1>Positioning</h1>
+  </div>
+  <div class="notice">Internal positioning document. For internal use and authorised partners only. This articulates how we present Local Loop Merseyside to different audiences using the barbell strategy.</div>
+  <div class="content">
+<p>Updates made from <a href="https://hackmd.io/S3TzFfkoQeSrtIvTyfwPZg?view">original in HackMD</a> following our review discussions:</p>
+<p>Local as a Strategy, Not a Limitation.</p>
+<p>The Barbell Approach: Conservative, stable messaging for everyday businesses, but a bolder edge for larger partners or innovators.</p>
+<p>Collaboration & Community Psychology: Collaboration is a powerful human drive. This sense has been lost and we’re bringing it back.</p>
+<p>Emergent Outcomes r.e ESG: We proactively shape a system where ESG-like benefits arise bottom-up, rather than checking boxes.</p>
+<p>No Direct Competitors: We see our unique position as proof that we’re extending well-known financial tools to an untapped market, rather than reinventing the wheel.</p>
+<p>Local Loop Merseyside (internal) Positioning:</p>
+<p>This document articulates our internal positioning for Local Loop Merseyside. It is for internal use only and serves as our shared understanding of how we present ourselves—both to local businesses and to select partners.</p>
+<p>Overall Positioning Strategy:</p>
+<p>We take a ‘<a href="https://www.investopedia.com/articles/investing/013114/barbell-investment-strategy.asp">barbell strategy</a>’ in how we talk about Local Loop:</p>
+<p>Safe, Normal, and Approachable</p>
+<p>For the majority of businesses, we emphasise our conservative and reliable nature. We avoid hype and radical claims, focusing on stability, certainty, confidence, trust, and practical day-to-day value. This reassures smaller or more risk-averse firms that we are a safe and credible choice.</p>
+<p>Radical Edge for Key Partners</p>
+<p>We also recognise there are audiences — like certain entrepreneurs, or forward-thinking local partners and anchors — who want to see the transformative power of what we’re building. For them, we highlight our innovative potential and how we can reshape local finance.</p>
+<p>This is not a bait-and-switch, it’s a deeper layer for those who can handle (and benefit from) a more visionary approach.</p>
+<p>This two-tiered positioning ensures we underpromise and overdeliver for our typical clients, building trust through consistent, reliable messaging, while still signalling big opportunities to those who seek them.</p>
+<p>Facing a Unique Market with No Direct Competitors</p>
+<p>We frequently mention that Local Loop has no direct competitors. Some businesses might find that puzzling: “If this is so good, why hasn’t anyone else done it?”</p>
+<p>We pre-empt this through the framing that these tools originate within the banking sector, and that digitisation of small business invoicing has made it feasible to adapt them for the first time, e.g. ‘The tools behind Local Loop are not new—but they’ve traditionally been available only to large corporations or big banks. We are democratising these mechanisms for local SMEs.’ It may also be useful to present this as ‘this is the opportunity we’ve spotted’, reassuring business owners or investors that we’re taking a commercial (rather than academic or activist) mindset.</p>
+<p>For potential partners, “no direct competitors” is a huge advantage. They can join an initiative that’s proven in principle (banks have done it for centuries) yet newly accessible at the local level, with all the opportunities that brings.</p>
+<p>There may also be a reasonable (but probably unspoken) concern that we will exploit our first-mover advantage: “Are they going to establish a monopoly position and lock me in?”</p>
+<p>We respond to this (possibly pre-emptively) by raising the fact that Local Loop Merseyside will be a Member-owned mutual with participatory governance, e.g. ‘Members retain full ownership and control over their data.’</p>
+<p>Credibility & Trust:</p>
+<p>We know that credibility is paramount, particularly when we’re handling something as sensitive as invoice data and cashflow. Our foundation rests on both traditional markers of trust (precedents for what we’re doing, partnerships) and the idea that we’re “moving with the tide.”</p>
+<p>Moving With the Tide</p>
+<p>We position ourselves as part of a broader wave in finance: businesses everywhere are moving online, exploring digital payments, and looking for new ways to stabilise cashflow. Local Loop goes with this shift. We’re simply bringing the benefits closer to home for Merseyside.</p>
+<p>In the strongest form of this, we may attempt to create a sense of inevitability around what we’re doing. This could tie in with giving adoption the character of a ‘movement’ once we reach a certain level of traction.</p>
+<p>Building Normalisation & Momentum</p>
+<p>We want Local Loop to be as ‘normal’ and intuitive as online banking. This normalisation helps us avoid feeling fringe or experimental. We always emphasise safety, reliability, trustworthiness, and that we have deep roots in the local business ecosystem. This combination makes us feel both familiar and solid to prospective members.</p>
+<p>No Need to Bash Others</p>
+<p>We never rely on negative comparisons to promote our offer - we don’t badmouth factoring services, banks, or other financial players. Instead, we highlight that we’ve learned from lon</p>  </div>
+</main>
+<footer>Local Loop Merseyside &mdash; Confidential. Not for distribution.</footer>
+</body>
+</html>
