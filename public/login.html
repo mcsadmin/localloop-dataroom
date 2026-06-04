@@ -4,26 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Local Loop Merseyside — Data Room</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --forest: #1a3a2a;
-      --forest-mid: #2d5a3d;
-      --sage: #7aab8a;
-      --cream: #f7f4ef;
-      --text: #1c2b22;
-      --muted: #6b7c72;
-      --border: #d4ddd7;
-      --error: #c0392b;
+      --purple:      oklch(0.30 0.155 293);
+      --purple-mid:  oklch(0.38 0.145 293);
+      --green:       oklch(0.90 0.195 130);
+      --cream:       #f5f4f8;
+      --text:        #1c1a2e;
+      --muted:       #6b6880;
+      --border:      #dddae8;
+      --error:       #c0392b;
     }
 
     html, body {
       height: 100%;
-      font-family: 'DM Sans', system-ui, sans-serif;
+      font-family: 'Open Sans', system-ui, sans-serif;
       background: var(--cream);
       color: var(--text);
     }
@@ -44,7 +44,7 @@
       padding: 2.5rem 2.5rem 2rem;
       width: 100%;
       max-width: 400px;
-      box-shadow: 0 4px 24px rgba(26,58,42,0.08);
+      box-shadow: 0 4px 24px rgba(30, 0, 80, 0.08);
     }
 
     .logo {
@@ -54,46 +54,26 @@
       margin-bottom: 1.75rem;
     }
 
-    .logo-mark {
-      width: 36px;
-      height: 36px;
-      background: var(--forest);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .logo-mark svg {
-      width: 20px;
-      height: 20px;
-      fill: none;
-      stroke: #fff;
-      stroke-width: 2;
-      stroke-linecap: round;
-    }
-
-    .logo-text {
-      font-family: 'Fraunces', Georgia, serif;
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--forest);
-      line-height: 1.2;
+    .logo-img {
+      height: 40px;
+      width: auto;
     }
 
     .logo-sub {
       font-size: 0.7rem;
       font-weight: 400;
       color: var(--muted);
-      letter-spacing: 0.05em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
+      margin-top: 0.15rem;
     }
 
     h1 {
-      font-family: 'Fraunces', Georgia, serif;
+      font-family: 'Arvo', Georgia, serif;
+      font-style: italic;
       font-size: 1.4rem;
-      font-weight: 600;
-      color: var(--forest);
+      font-weight: 700;
+      color: var(--purple);
       margin-bottom: 0.4rem;
     }
 
@@ -127,8 +107,8 @@
     }
 
     input[type="password"]:focus {
-      border-color: var(--forest-mid);
-      box-shadow: 0 0 0 3px rgba(45,90,61,0.12);
+      border-color: var(--purple-mid);
+      box-shadow: 0 0 0 3px oklch(0.30 0.155 293 / 0.12);
     }
 
     .error-msg {
@@ -144,18 +124,18 @@
       margin-top: 1.25rem;
       width: 100%;
       padding: 0.7rem 1rem;
-      background: var(--forest);
+      background: var(--purple);
       color: #fff;
       border: none;
-      border-radius: 6px;
+      border-radius: 20px;
       font-size: 0.9rem;
       font-family: inherit;
-      font-weight: 500;
+      font-weight: 600;
       cursor: pointer;
       transition: background 0.15s, transform 0.1s;
     }
 
-    button[type="submit"]:hover { background: var(--forest-mid); }
+    button[type="submit"]:hover { background: var(--purple-mid); }
     button[type="submit"]:active { transform: scale(0.98); }
 
     .footer {
@@ -169,17 +149,11 @@
 <body>
   <div class="card">
     <div class="logo">
-      <div class="logo-mark">
-        <svg viewBox="0 0 24 24">
-          <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-          <path d="M2 17l10 5 10-5"/>
-          <path d="M2 12l10 5 10-5"/>
-        </svg>
-      </div>
-      <div>
-        <div class="logo-text">Local Loop Merseyside</div>
-        <div class="logo-sub">Data Room</div>
-      </div>
+      <img
+        src="https://manus.space/manus-storage/logo-purple-transparent_e17b0e88.png"
+        alt="Local Loop Merseyside"
+        class="logo-img"
+      />
     </div>
 
     <h1>Access required</h1>

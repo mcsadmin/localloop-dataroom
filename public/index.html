@@ -4,32 +4,34 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Local Loop Merseyside — Data Room</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=DM+Sans:wght@400;500;600&display=swap');
-
     :root {
-      --forest: #1a3a2a;
-      --forest-mid: #2d5a3d;
-      --sage: #7aab8a;
-      --cream: #f7f4ef;
-      --text: #1c2b22;
-      --muted: #6b7c72;
-      --border: #d4ddd7;
-      --card-bg: #ffffff;
+      --purple:      oklch(0.30 0.155 293);
+      --purple-mid:  oklch(0.38 0.145 293);
+      --purple-light:oklch(0.55 0.130 293);
+      --green:       oklch(0.90 0.195 130);
+      --cream:       #f5f4f8;
+      --text:        #1c1a2e;
+      --muted:       #6b6880;
+      --border:      #dddae8;
+      --card-bg:     #ffffff;
     }
 
     html, body {
       min-height: 100%;
-      font-family: 'DM Sans', system-ui, sans-serif;
+      font-family: 'Open Sans', system-ui, sans-serif;
       background: var(--cream);
       color: var(--text);
     }
 
     /* ── Header ── */
     header {
-      background: var(--forest);
+      background: var(--purple);
       color: #fff;
       padding: 0 2rem;
       height: 56px;
@@ -39,6 +41,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
+      box-shadow: 0 2px 8px -2px rgba(30, 0, 80, 0.18);
     }
 
     .header-left {
@@ -47,48 +50,29 @@
       gap: 0.75rem;
     }
 
-    .logo-mark {
-      width: 30px;
-      height: 30px;
-      background: rgba(255,255,255,0.15);
-      border-radius: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .logo-mark svg {
-      width: 16px;
-      height: 16px;
-      fill: none;
-      stroke: #fff;
-      stroke-width: 2;
-      stroke-linecap: round;
-    }
-
-    .site-name {
-      font-family: 'Fraunces', Georgia, serif;
-      font-size: 0.95rem;
-      font-weight: 600;
-      letter-spacing: -0.01em;
+    .header-logo {
+      height: 36px;
+      width: auto;
+      filter: brightness(0) invert(1);
     }
 
     .site-tag {
       font-size: 0.7rem;
       font-weight: 400;
       opacity: 0.6;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      margin-left: 0.25rem;
+      margin-left: 0.5rem;
+      font-family: 'Open Sans', sans-serif;
     }
 
     .logout-btn {
       font-size: 0.78rem;
-      color: rgba(255,255,255,0.7);
+      color: rgba(255,255,255,0.75);
       background: none;
       border: 1px solid rgba(255,255,255,0.25);
-      border-radius: 4px;
-      padding: 0.3rem 0.75rem;
+      border-radius: 20px;
+      padding: 0.3rem 0.875rem;
       cursor: pointer;
       font-family: inherit;
       transition: color 0.15s, border-color 0.15s;
@@ -109,10 +93,11 @@
     }
 
     .page-header h1 {
-      font-family: 'Fraunces', Georgia, serif;
+      font-family: 'Arvo', Georgia, serif;
+      font-style: italic;
       font-size: 1.75rem;
       font-weight: 700;
-      color: var(--forest);
+      color: var(--purple);
       margin-bottom: 0.5rem;
     }
 
@@ -161,8 +146,8 @@
     }
 
     .card:hover {
-      border-color: var(--forest-mid);
-      box-shadow: 0 4px 16px rgba(26,58,42,0.1);
+      border-color: var(--purple-light);
+      box-shadow: 0 4px 16px rgba(60, 0, 140, 0.10);
       transform: translateY(-1px);
     }
 
@@ -171,7 +156,7 @@
     .card-icon {
       width: 36px;
       height: 36px;
-      background: rgba(26,58,42,0.07);
+      background: rgba(60, 0, 140, 0.07);
       border-radius: 8px;
       display: flex;
       align-items: center;
@@ -182,7 +167,7 @@
     .card-icon svg {
       width: 18px;
       height: 18px;
-      stroke: var(--forest);
+      stroke: var(--purple);
       fill: none;
       stroke-width: 1.75;
       stroke-linecap: round;
@@ -190,10 +175,10 @@
     }
 
     .card-title {
-      font-family: 'Fraunces', Georgia, serif;
+      font-family: 'Arvo', Georgia, serif;
       font-size: 1rem;
-      font-weight: 600;
-      color: var(--forest);
+      font-weight: 700;
+      color: var(--purple);
       line-height: 1.3;
     }
 
@@ -210,9 +195,9 @@
       letter-spacing: 0.05em;
       text-transform: uppercase;
       padding: 0.2rem 0.5rem;
-      border-radius: 4px;
-      background: rgba(26,58,42,0.08);
-      color: var(--forest-mid);
+      border-radius: 20px;
+      background: rgba(60, 0, 140, 0.08);
+      color: var(--purple-mid);
       margin-top: 0.25rem;
       align-self: flex-start;
     }
@@ -224,7 +209,7 @@
     }
 
     .card.placeholder .card-badge {
-      background: rgba(107,124,114,0.12);
+      background: rgba(107,104,128,0.12);
       color: var(--muted);
     }
 
@@ -242,14 +227,12 @@
 
 <header>
   <div class="header-left">
-    <div class="logo-mark">
-      <svg viewBox="0 0 24 24">
-        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-        <path d="M2 17l10 5 10-5"/>
-        <path d="M2 12l10 5 10-5"/>
-      </svg>
-    </div>
-    <span class="site-name">Local Loop Merseyside <span class="site-tag">Data Room</span></span>
+    <img
+      src="https://manus.space/manus-storage/logo-purple-transparent_e17b0e88.png"
+      alt="Local Loop Merseyside"
+      class="header-logo"
+    />
+    <span class="site-tag">Data Room</span>
   </div>
   <a href="/logout" class="logout-btn">Sign out</a>
 </header>
@@ -282,7 +265,7 @@
             <path d="M3 9h18M9 21V9"/>
           </svg>
         </div>
-        <div class="card-title">Budget & Actuals</div>
+        <div class="card-title">Budget &amp; Actuals</div>
         <div class="card-desc">Year-to-date budget versus actuals tracking.</div>
         <span class="card-badge">Coming soon</span>
       </div>
