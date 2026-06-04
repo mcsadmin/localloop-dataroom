@@ -45,6 +45,12 @@
     .content blockquote p { margin-bottom: 0; font-style: italic; }
     .content hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
     .notice { background: rgba(60,0,140,0.06); border: 1px solid rgba(60,0,140,0.18); border-radius: 8px; padding: 1rem 1.25rem; margin-bottom: 2rem; font-size: 0.85rem; color: var(--purple); line-height: 1.6; }
+    .table-wrap { overflow-x: auto; margin: 1rem 0 1.5rem; border-radius: 8px; border: 1px solid var(--border); }
+    .table-wrap table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+    .table-wrap thead { background: var(--purple); color: #fff; }
+    .table-wrap th { padding: 0.65rem 0.875rem; text-align: left; font-weight: 600; font-size: 0.78rem; letter-spacing: 0.03em; white-space: nowrap; }
+    .table-wrap td { padding: 0.6rem 0.875rem; border-top: 1px solid var(--border); vertical-align: top; line-height: 1.55; color: var(--text); }
+    .table-wrap tbody tr:nth-child(even) { background: rgba(60,0,140,0.03); }
     footer { text-align: center; font-size: 0.75rem; color: var(--muted); padding: 2rem; border-top: 1px solid var(--border); }
   </style>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -93,15 +99,70 @@
 <p>FreeAgent's Liverpool/postcode late-payment percentages (see regional section) — directional, postcode-level, not a local survey.</p>
 <h3>National UK Data — Scale and Human Cost</h3>
 <h4>National scale of the problem</h4>
-<p>| Metric | Figure | Source | Date | Robustness |</p>
-<p>|---|---|---|---|---|</p>
-<p>| Total owed at any one time | ~£26 billion(90% CI £18–36bn) | DBT / London Economics,Late Payments Research | Jul 2025 | High — government econometric study, n≈1,455 |</p>
-<p>| Avg owed per affected business | ~£17,000 | DBT / London Economics | Jul 2025 | High |</p>
-<p>| Businesses affected per year | >1.5 million (28%) | DBT / Small Business Commissioner | Jul 2025 | High |</p>
-<p>| % small firms reporting more late payments YoY | 45% | FSB / GoCardless | Mar 2025 | Good — survey n=2,298 |</p>
-<p>| Avg days paid late | 8.4 days (2025 avg) | Xero Small Business Insights | Feb 2026 | High — transaction data |</p>
-<p>| Avg unpaid-invoice balance per SME | £21,400 | Intuit QuickBooks UK | 2025 | Good — survey |</p>
-<p>| Cost to UK economy per year | ~£11 billion (~0.4% GDP) | DBT | Jul 2025 | High |</p>
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Metric</th>
+        <th>Figure</th>
+        <th>Source</th>
+        <th>Date</th>
+        <th>Robustness</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Total owed at any one time</td>
+        <td>~&pound;26 billion (90% CI &pound;18&ndash;36bn)</td>
+        <td>DBT / London Economics, <em>Late Payments Research</em></td>
+        <td>Jul 2025</td>
+        <td>High &mdash; government econometric study, n&asymp;1,455</td>
+      </tr>
+      <tr>
+        <td>Avg owed per affected business</td>
+        <td>~&pound;17,000</td>
+        <td>DBT / London Economics</td>
+        <td>Jul 2025</td>
+        <td>High</td>
+      </tr>
+      <tr>
+        <td>Businesses affected per year</td>
+        <td>&gt;1.5 million (28%)</td>
+        <td>DBT / Small Business Commissioner</td>
+        <td>Jul 2025</td>
+        <td>High</td>
+      </tr>
+      <tr>
+        <td>% small firms reporting more late payments YoY</td>
+        <td>45%</td>
+        <td>FSB / GoCardless</td>
+        <td>Mar 2025</td>
+        <td>Good &mdash; survey n=2,298</td>
+      </tr>
+      <tr>
+        <td>Avg days paid late</td>
+        <td>8.4 days (2025 avg)</td>
+        <td>Xero Small Business Insights</td>
+        <td>Feb 2026</td>
+        <td>High &mdash; transaction data</td>
+      </tr>
+      <tr>
+        <td>Avg unpaid-invoice balance per SME</td>
+        <td>&pound;21,400</td>
+        <td>Intuit QuickBooks UK</td>
+        <td>2025</td>
+        <td>Good &mdash; survey</td>
+      </tr>
+      <tr>
+        <td>Cost to UK economy per year</td>
+        <td>~&pound;11 billion (~0.4% GDP)</td>
+        <td>DBT</td>
+        <td>Jul 2025</td>
+        <td>High</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 <p>Two data points are especially persuasive for a netting/clearing pitch because they describe gridlock up the supply chain. Exactly the problem clearing solves:</p>
 <p>DBT's 2025 research found payment problems multiply the further down a supply chain you go, and that 24% of firms said incorrectly-handled invoices added to delays. (Source: Business Money)</p>
 <p>36% of small businesses say late incoming payments stop them paying their own suppliers on time, and 18% say it hits their ability to pay employees (FSB/GoCardless, Mar 2025). This "domino effect" is the core narrative for clearing mutual debt. (Source: The Fintech Times)</p>
